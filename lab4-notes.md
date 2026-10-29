@@ -105,3 +105,17 @@ These results show that the application's validation functions correctly handle 
 ### Edit Request Observation
 
 I opened the Edit Request page and tried changing the preferred date and request details. When I clicked Save Changes, the form returned to its original values. After reviewing `edit-request.php`, I found that the page uses hardcoded sample request data instead of retrieving and updating a database record. The Edit page demonstrates how an update form works, but the changes are not currently saved.
+
+### GET and POST Questions
+
+**1. What query parameter appears in the request details URL?**
+
+The request details URL uses the `id` query parameter to identify which tutoring request to display.
+
+**2. Why is a GET query parameter appropriate for viewing one request?**
+
+GET is appropriate because it allows the application to display a specific request without changing any data.
+
+**3. Why should an actual update or delete later use POST rather than GET?**
+
+POST should be used because updating or deleting a request changes data. Using POST helps prevent accidental changes from simply opening a URL. The application should also check permissions before making changes.
